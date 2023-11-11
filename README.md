@@ -10,3 +10,5 @@ apkikey
 ```
 
 - replace it with your apikey do not to add any other thing
+
+- when you run main.py type something in the console and it will send a response and make a mp4 file with the response

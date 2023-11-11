@@ -2,6 +2,12 @@ from __future__ import annotations
 from openai.api_resources import ChatCompletion
 import openai
 from profanity import profanity
+from text_to_speech import save
+
+def tts(text:str):
+    language = "en"
+    output_file = "gpt.mp3" 
+    save(text, language, file=output_file)
 
 class Turbo:
     def __init__(self):
@@ -29,6 +35,7 @@ class Turbo:
                )
             res = completion['choices'][0]['message']['content']
             print("Chatgpt:",res.strip("\n").strip())
+            tts(res)
             complete.append({"role":"assistant","content":res.strip("\n").strip()})
 
     async def tubo(self) -> None:
